@@ -8,8 +8,8 @@ export default function Signup() {
     console.log('1', data, acquisitionChannel);
 
     data.acquisition = acquisitionChannel;
-
     console.log('2', data, acquisitionChannel);
+    // event.target.reset();
   }
   return (
     <form onSubmit={handleSubmit}>
