@@ -4,6 +4,7 @@ import {useRef} from "react";
 export default function Login() {
   const email = useRef();
   const password = useRef();
+  const [ emaliIsInvalid, setEmailIsInvalid ] = useState();
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -11,7 +12,15 @@ export default function Login() {
     const enteredEmail = email.current.value;
     const enteredPassword = password.current.value;
 
-    console.log(`enteredEmail: ${enteredEmail} - enteredPassword: ${enteredPassword}`)
+    console.log(`enteredEmail: ${enteredEmail} - enteredPassword: ${enteredPassword}`);
+    const emailIsValid = enteredEmail.includes('@');
+
+    if (!emailIsValid) {
+      setEmailIsInvalid(true);
+      return;
+    }
+
+    setEmailIsInvalid(false);
   }
 
   return (
@@ -27,6 +36,9 @@ export default function Login() {
             name="email"
             ref={email}
           />
+          <div className="control-error">
+            {emaliIsInvalid && <p>Please enter a valid email address.</p>}
+          </div>
         </div>
 
         <div className="control no-margin">

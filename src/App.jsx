@@ -1,6 +1,6 @@
 import Header from './components/Header.jsx';
-// import Login from './components/Login.jsx';
-import Login from './components/StageLogin.jsx';
+import Login from './components/Login.jsx';
+// import Login from './components/StageLogin.jsx';
 import Signup from "./components/Signup";
 
 function App() {
