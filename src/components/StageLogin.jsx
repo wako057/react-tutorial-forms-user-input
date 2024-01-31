@@ -7,7 +7,8 @@ export default function Login() {
   });
 
   console.log(enteredValues);
-  const emailIsInvalid = !enteredValues.email.includes('@');
+  const emailIsInvalid =
+    enteredValues.email !== '' && !enteredValues.email.includes('@');
   console.log(emailIsInvalid);
 
   function handleSubmit(event) {
